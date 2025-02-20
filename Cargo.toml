@@ -1,0 +1,22 @@
+[package]
+name = "php_prustect"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["dylib"]
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+debug = 0
+
+
+[dependencies]
+ext-php-rs = "0.13.1"
+obfstr = "0.4.4"
+xxhash-rust = { version = "0.8.15",  features = ["xxh3"] }
+hex = "0.4.3"
